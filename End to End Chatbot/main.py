@@ -61,3 +61,14 @@ intents = [
 vectorizer = TfidfTransformer()
 clf = LogisticRegression(random_state=0,max_iter=10000)
 
+tags = []
+patterns = [] 
+for intent in intents:
+    for pattern in intent['pattern']:
+        tags.append(intent['tag'])
+        patterns.append(pattern)
+
+X = vectorizer.fit_transform(patterns)
+y = tags
+clf.fit(X,y)
+
