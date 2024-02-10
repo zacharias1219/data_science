@@ -23,3 +23,15 @@ df.drop('Date', axis=1, inplace=True)
 df = df.set_index('month')
 print(df.head())
 
+df.plot(figsize=(20,8))
+plt.title("Gold Price monthly since 1950 and onwards")
+
+plt.xlabel("months")
+plt.ylabel("price in USD")
+plt.grid()
+
+round(df.describe(),3)
+
+_, ax = plt.subplots(figsize=(25, 8))
+sns.boxplot(x=df.index.year,y=df.values[:,0], ax=ax)
+
