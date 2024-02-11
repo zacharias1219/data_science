@@ -19,7 +19,7 @@ def load_data(file_path):
     return real_estate_data
 
 # Load the credit score data
-real_estate_data = load_data("credit_score.csv")
+real_estate_data = load_data("credit_scoring.csv")
 
 # Display the first few rows of the data
 real_estate_data_head = real_estate_data.head()
@@ -117,3 +117,4 @@ plt.xlabel('Actual')
 plt.ylabel('Predicted')
 plt.title('Actual vs. Predicted House Prices')
 plt.show()
+
