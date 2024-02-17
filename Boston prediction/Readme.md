@@ -12,3 +12,9 @@ Create a new environment
 ```markdown
 conda create -p venv python==3.10 -y
 ```
+
+Download requirements.txt file
+
+```markdown
+pip install -r requirements.txt
+```
