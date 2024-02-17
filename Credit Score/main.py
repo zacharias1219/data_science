@@ -50,8 +50,7 @@ fig, axes = plt.subplots(nrows=3, ncols=2, figsize=(12, 12))
 fig.suptitle('Histograms of Real Estate Data', fontsize=16)
 
 # Specify the columns for the histograms
-cols = ['House age', 'Distance to the nearest MRT station', 'Number of convenience stores',
-        'Latitude', 'Longitude', 'House price of unit area']
+cols = ['Age','Credit Utilization Ratio','Payment History','Number of Credit Accounts','Loan Amount','Interest Rate','Loan Term']
 
 # Plot histograms for each column
 for i, col in enumerate(cols):
@@ -92,6 +91,20 @@ print(correlation_matrix)
 
 # Select the features and target variable
 features = ['Distance to the nearest MRT station', 'Number of convenience stores', 'Latitude', 'Longitude']
+target = 'House price of unit area'
+
+# Split the data into training and test sets
+X = real_estate_data[features]
+y = real_estate_data[target]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Create a linear regression model
+model = LinearRegression()
+
+# Fit the model to the training data
+# Make sure the column names used in the code match the actual column names in the dataset
+features = ['Distance to the nearest MRT station', 'Number of convenience stores', 'Latitude', 'Longitude', 'House age']
 target = 'House price of unit area'
 
 # Split the data into training and test sets
