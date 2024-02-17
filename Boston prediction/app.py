@@ -27,7 +27,7 @@ def predict():
     final_features = scalar.transform(np.array(input_features).reshape(1,-1))
     print(final_features)
     output = model.predict(final_features)[0]
-    return render_template("home.html",prediction_text="The House price prediction is {}".format(output))
+    return render_template("index.html",prediction_text="The House price prediction is {}".format(output))
 
 if __name__ == '__main__':
     app.run(debug=True)
